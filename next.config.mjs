@@ -1,15 +1,11 @@
 /** @type {import('next').NextConfig} */
-// import withPWAinit from 'next-pwa';
+import withPWAInit from '@ducanh2912/next-pwa';
 
-// const withPWA = withPWAinit({
-// 	pwa: {
-// 		dest: 'public',
-// 		swSrc: 'service-worker.js',
-// 	},
-// });
+const withPWA = withPWAInit({
+	dest: 'public',
+	customWorkerSrc: 'service-worker',
+});
 
-// const nextConfig = withPWA({});
-
-const nextConfig = {};
-
-export default nextConfig;
+export default withPWA({
+	// Your Next.js config
+});

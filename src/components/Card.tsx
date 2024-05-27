@@ -45,7 +45,7 @@ const Card: FC<CardProps> = ({item}) => {
 			<Box p={6}>
 				<Stack spacing={0} align={'center'} mb={5}>
 					<Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
-						{item.name}
+						{item?.name}
 					</Heading>
 					<Text color={'gray.500'}>Frontend Developer</Text>
 				</Stack>

@@ -6,7 +6,8 @@ export const breakpoints = {
 	xLarge: '1290px',
 };
 
-
 export const URL = {
 	root: '',
-}
+};
+
+export const FORMKEY = 'formKey';

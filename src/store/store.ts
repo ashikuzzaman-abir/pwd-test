@@ -2,12 +2,14 @@ import { configureStore } from '@reduxjs/toolkit';
 
 import { setupListeners } from '@reduxjs/toolkit/query';
 import mainApi from './services/mainApi';
+import formsSlice from './slices/formsSlice';
 
 // import Api's
 
 export const store = configureStore({
 	reducer: {
 		[mainApi.reducerPath]: mainApi.reducer,
+		"forms": formsSlice,
 	},
 	middleware: getDefaultMiddleware =>
 		getDefaultMiddleware().concat(mainApi.middleware).concat(),

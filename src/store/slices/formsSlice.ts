@@ -1,7 +1,10 @@
+import { FORMKEY } from '@/lib/constants';
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState: any = {
-	forms: [],
+	forms: localStorage.getItem(FORMKEY)
+		? JSON.parse(localStorage.getItem(FORMKEY) as string)
+		: [],
 };
 
 const formsSlice = createSlice({

@@ -28,6 +28,7 @@ import {
 } from 'react-icons/md';
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
 import useForms from '@/hooks/useForms';
+import { useRouter } from 'next/navigation';
 
 type FormProps = {};
 
@@ -39,6 +40,7 @@ const Form: FC<FormProps> = ({}) => {
 	// VARIABLES
 
 	// STYLES
+	const router = useRouter();
 	const [name, setName] = useState('');
 	const [email, setEmail] = useState('');
 	const [message, setMessage] = useState('');
@@ -52,6 +54,10 @@ const Form: FC<FormProps> = ({}) => {
 		e.preventDefault();
 		console.log('data', name, email, message);
 		addForm({ name, email, message });
+		setName('');
+		setEmail('');
+		setMessage('');
+		router.push('/forms');
 
 		// Get the existing data
 		// let existingData = localStorage.getItem('formData');

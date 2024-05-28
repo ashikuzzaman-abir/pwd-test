@@ -24,7 +24,8 @@ const page: NextPage<pageProps> = ({}) => {
 	// COMPONENTS
 
 	return (
-		<Grid templateColumns='1fr 1fr 1fr'>
+		<Grid templateColumns='1fr 1fr 1fr' gap={6}>
+			{forms?.length === 0 && <h1>No Forms</h1>}
 			{forms?.map((item: any, idx: number) => (
 				<Card key={idx} item={item} />
 			))}

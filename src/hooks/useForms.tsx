@@ -77,7 +77,7 @@ const useForms = () => {
 		syncTrigger({ forms });
 	};
 
-	return { forms: data?.doc, addForm, sync, local: forms };
+	return { forms: data?.doc, addForm, sync, local: forms, addFormToDb };
 };
 
 export default useForms;

@@ -47,13 +47,13 @@ const Form: FC<FormProps> = ({}) => {
 
 	// console.log('data', name, email, message);
 
-	const { addForm } = useForms();
+	const { addForm, addFormToDb } = useForms();
 
 	// FUNCTIONS
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		console.log('data', name, email, message);
-		addForm({ name, email, message, uuid: uuid() });
+		addFormToDb({ name, email, message, uuid: uuid() });
 		setName('');
 		setEmail('');
 		setMessage('');
@@ -140,7 +140,12 @@ const Form: FC<FormProps> = ({}) => {
 														onChange={(e) => setMessage(e.target.value)}
 													/>
 												</FormControl>
-												<FormControl id='name' float='right' display={"flex"} gap={3}>
+												<FormControl
+													id='name'
+													float='right'
+													display={'flex'}
+													gap={3}
+												>
 													<Button
 														variant='solid'
 														bg='#0D74FF'

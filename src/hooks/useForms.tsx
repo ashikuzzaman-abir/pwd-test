@@ -10,7 +10,7 @@ import {
 import { FORMKEY } from '@/lib/constants';
 
 const useForms = () => {
-	const forms = useAppSelector((state) => state.forms.forms);
+	const forms = useAppSelector((state) => state?.forms?.forms);
 	const dispatch = useAppDispatch();
 	const [forms_, setForms_] = React.useState<any>(null);
 
@@ -60,7 +60,7 @@ const useForms = () => {
 		syncTrigger({ forms });
 	};
 
-	return { forms: forms_, addForm, sync };
+	return { forms: data?.doc, addForm, sync, local: forms };
 };
 
 export default useForms;

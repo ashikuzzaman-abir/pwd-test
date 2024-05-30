@@ -39,6 +39,7 @@ const Card: FC<CardProps> = ({ item }) => {
 			boxShadow={'2xl'}
 			rounded={'md'}
 			overflow={'hidden'}
+			maxH='300px'
 		>
 			<Box p={6}>
 				<Stack spacing={0} align={'center'} mb={5}>

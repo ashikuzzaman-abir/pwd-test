@@ -2,14 +2,14 @@
 import Card from '@/components/Card';
 import SyncButton from '@/components/sync-button/SyncButton';
 import useForms from '@/hooks/useForms';
-import { Flex, Grid, Icon } from '@chakra-ui/react';
+import { Center, Flex, Grid, Icon } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import React from 'react';
 
 type pageProps = {};
 
 const page: NextPage<pageProps> = ({}) => {
-	const { forms } = useForms();
+	const { local } = useForms();
 	// HOOKS
 
 	// STATE
@@ -26,13 +26,19 @@ const page: NextPage<pageProps> = ({}) => {
 
 	return (
 		<>
-			<Grid templateColumns='1fr 1fr 1fr' gap={6}>
-				{forms?.length === 0 && <h1>No Forms</h1>}
-				{forms?.map((item: any, idx: number) => (
+			<Grid templateColumns='1fr 1fr 1fr' gap={6} minH='100vh'>
+				{local?.length === 0 && (
+					<Flex w='100vw' h='100vh'>
+						<Center>
+							<h1>No Forms</h1>
+						</Center>
+					</Flex>
+				)}
+				{local?.map((item: any, idx: number) => (
 					<Card key={idx} item={item} />
 				))}
 			</Grid>
-			{/* <SyncButton /> */}
+			<SyncButton />
 		</>
 	);
 };

@@ -6,6 +6,7 @@ const Navigation = () => {
 	return (
 		<Flex gap={3} bgColor={'white'} position={'absolute'} top={0} right={20}>
 			<Link href='/'>Home</Link>
+			<Link href='/local'>Local</Link>
 			<Link href='/forms'>Forms</Link>
 		</Flex>
 	);

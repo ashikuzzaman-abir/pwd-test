@@ -29,7 +29,7 @@ import {
 import { BsGithub, BsDiscord, BsPerson } from 'react-icons/bs';
 import useForms from '@/hooks/useForms';
 import { useRouter } from 'next/navigation';
-
+import { uuid } from 'uuidv4';
 type FormProps = {};
 
 const Form: FC<FormProps> = ({}) => {
@@ -53,7 +53,7 @@ const Form: FC<FormProps> = ({}) => {
 	const handleSubmit = (e: React.FormEvent) => {
 		e.preventDefault();
 		console.log('data', name, email, message);
-		addForm({ name, email, message });
+		addForm({ name, email, message, uuid: uuid() });
 		setName('');
 		setEmail('');
 		setMessage('');

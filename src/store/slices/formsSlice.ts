@@ -20,8 +20,11 @@ const formsSlice = createSlice({
 				(form: any) => form.id !== action.payload
 			);
 		},
+		reset: (state) => {
+			state.forms = [];
+		},
 	},
 });
 
-export const { addForm, removeForm } = formsSlice.actions;
+export const { addForm, removeForm, reset } = formsSlice.actions;
 export default formsSlice.reducer;

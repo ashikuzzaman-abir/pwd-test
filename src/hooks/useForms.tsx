@@ -69,7 +69,7 @@ const useForms = () => {
 	};
 	const addFormToDb = (form: any) => {
 		console.log('addForm Clicked to db');
-		addFormTrigger({ form });
+		addFormTrigger({ ...form });
 		setLastForm(form);
 	};
 	const sync = () => {

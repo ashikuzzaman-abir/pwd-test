@@ -7,7 +7,7 @@ export const breakpoints = {
 };
 
 export const URL = {
-	root: '',
+	root: 'http://localhost:5000/api',
 };
 
 export const FORMKEY = 'formKey';

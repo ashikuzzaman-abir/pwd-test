@@ -13,25 +13,25 @@ import {
 } from '@chakra-ui/react';
 
 type CardProps = {
-item?: any;
-}
+	item?: any;
+};
 
-const Card: FC<CardProps> = ({item}) => {
-// HOOKS
+const Card: FC<CardProps> = ({ item }) => {
+	// HOOKS
 
-// STATE
+	// STATE
 
-// VARIABLES
+	// VARIABLES
 
-// STYLES
+	// STYLES
 
-// FUNCTIONS
+	// FUNCTIONS
 
-// EFFECTS
+	// EFFECTS
 
-// COMPONENTS
+	// COMPONENTS
 
-  return (
+	return (
 		<Box
 			maxW={'270px'}
 			w={'full'}
@@ -40,30 +40,29 @@ const Card: FC<CardProps> = ({item}) => {
 			rounded={'md'}
 			overflow={'hidden'}
 		>
-			
-
 			<Box p={6}>
 				<Stack spacing={0} align={'center'} mb={5}>
 					<Heading fontSize={'2xl'} fontWeight={500} fontFamily={'body'}>
 						{item?.name}
 					</Heading>
-					<Text color={'gray.500'}>Frontend Developer</Text>
+					<Text color={'gray.500'}>{item?.email}</Text>
+					<Text color={'gray.500'}>{item?.message}</Text>
 				</Stack>
 
-				<Stack direction={'row'} justify={'center'} spacing={6}>
+				{/* <Stack direction={'row'} justify={'center'} spacing={6}>
 					<Stack spacing={0} align={'center'}>
 						<Text fontWeight={600}>23k</Text>
 						<Text fontSize={'sm'} color={'gray.500'}>
 							Followers
 						</Text>
-					</Stack>
-					<Stack spacing={0} align={'center'}>
+					</Stack> */}
+				{/* <Stack spacing={0} align={'center'}>
 						<Text fontWeight={600}>23k</Text>
 						<Text fontSize={'sm'} color={'gray.500'}>
 							Followers
 						</Text>
-					</Stack>
-				</Stack>
+					</Stack> */}
+				{/* </Stack> */}
 
 				<Button
 					w={'full'}

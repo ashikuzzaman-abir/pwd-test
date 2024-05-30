@@ -15,7 +15,9 @@ const useForms = () => {
 	const [forms_, setForms_] = React.useState<any>(null);
 
 	const [syncTrigger, syncResult] = useSyncFormsMutation();
+	const [addFormTrigger, addFormResult] = useCreateFormMutation();
 	const { data, error, isLoading, isError } = useGetFormsQuery(null);
+	const [lastForm, setLastForm] = React.useState<any>(null);
 
 	// useEffect(() => {
 	// 	const forms = localStorage.getItem('formData');
@@ -50,10 +52,25 @@ const useForms = () => {
 		}
 	}, [syncResult]);
 
+	useEffect(() => {
+		if (addFormResult.isSuccess) {
+			setLastForm(null);
+		}
+		if (addFormResult.isError) {
+			alert('Failed to add form');
+			addForm(lastForm);
+		}
+	}, [addFormResult]);
+
 	const addForm = (form: any) => {
 		console.log('addForm Clicked');
 		addForm2Loacl(form);
 		dispatch(addFrom2Store(form));
+	};
+	const addFormToDb = (form: any) => {
+		console.log('addForm Clicked to db');
+		addFormTrigger({ form });
+		setLastForm(form);
 	};
 	const sync = () => {
 		console.log('Sync Clicked');

@@ -57,7 +57,8 @@ const Form: FC<FormProps> = ({}) => {
 		setName('');
 		setEmail('');
 		setMessage('');
-		router.push('/forms');
+
+		// router.push('/forms');
 
 		// Get the existing data
 		// let existingData = localStorage.getItem('formData');
@@ -139,7 +140,7 @@ const Form: FC<FormProps> = ({}) => {
 														onChange={(e) => setMessage(e.target.value)}
 													/>
 												</FormControl>
-												<FormControl id='name' float='right'>
+												<FormControl id='name' float='right' display={"flex"} gap={3}>
 													<Button
 														variant='solid'
 														bg='#0D74FF'
@@ -148,6 +149,17 @@ const Form: FC<FormProps> = ({}) => {
 														type='submit'
 													>
 														Send Message
+													</Button>
+													<Button
+														variant='solid'
+														bg='#0D74FF'
+														color='white'
+														_hover={{}}
+														onClick={() =>
+															addForm({ name, email, message, uuid: uuid() })
+														}
+													>
+														Save Draft
 													</Button>
 												</FormControl>
 											</form>
